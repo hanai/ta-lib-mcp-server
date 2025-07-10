@@ -1,0 +1,52 @@
+# Exclude files and directories
+exclude = [
+    ".git",
+    "__pycache__",
+    ".pytest_cache",
+    ".venv",
+    "venv",
+    "build",
+    "dist",
+]
+
+# Maximum line length
+line-length = 88
+
+# Target Python version
+target-version = "py313"
+
+[lint]
+# Enable rules
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+
+# Ignore rules
+ignore = [
+    "E501",  # line too long (handled by formatter)
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
+
+[format]
+# Use double quotes
+quote-style = "double"
+
+# Indentation style
+indent-style = "space"
+
+# Skip magic trailing comma
+skip-magic-trailing-comma = false
+
+# Line ending handling
+line-ending = "auto"
+
+[lint.isort]
+# Import sorting configuration
+known-first-party = ["ta_lib_mcp_server"]
