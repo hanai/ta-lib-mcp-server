@@ -4,7 +4,7 @@ A Model Context Protocol (MCP) server that provides access to TA-Lib technical a
 
 ## Features
 
-[TA-Lib Python Documentation](https://ta-lib.github.io/ta-lib-python/doc_index.html)
+For full API reference and examples, see: [TA-Lib Python Documentation](https://ta-lib.github.io/ta-lib-python/doc_index.html)
 
 ## Usage
 
