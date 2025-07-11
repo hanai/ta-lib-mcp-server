@@ -4,36 +4,23 @@ A Model Context Protocol (MCP) server that provides access to TA-Lib technical a
 
 ## Features
 
-- **MACD (Moving Average Convergence/Divergence)**: Trend-following momentum indicator
-- **RSI (Relative Strength Index)**: Momentum oscillator measuring price change speed and magnitude
-- **STOCHRSI (Stochastic Relative Strength Index)**: Stochastic oscillator applied to RSI values
-
-## Installation
-
-```bash
-uv sync
-```
+For full API reference and examples, see: [TA-Lib Python Documentation](https://ta-lib.github.io/ta-lib-python/doc_index.html)
 
 ## Usage
 
-The server exposes three main tools for technical analysis:
+Add the following JSON block to your IDE MCP settings.
 
-### 1. Calculate MACD
-
-Calculates MACD with customizable fast period, slow period, and signal period.
-
-### 2. Calculate RSI
-
-Calculates RSI with configurable time period (default: 14).
-
-### 3. Calculate STOCHRSI
-
-Calculates Stochastic RSI with configurable RSI period, %K smoothing, %D smoothing, and moving average type.
-
-## Running the Server
-
-```bash
-python server.py
+```json
+{
+  "mcp": {
+    "servers": {
+      "ta-lib": {
+        "command": "docker",
+        "args": ["run", "-i", "--rm", "ghcr.io/hanai/ta-lib-mcp-server:main"]
+      }
+    }
+  }
+}
 ```
 
 ## Dependencies
