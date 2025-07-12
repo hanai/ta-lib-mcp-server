@@ -71,7 +71,9 @@ def register_overlap_studies(mcp):
         annotations=common_tool_annotations,
     )
     def calculate_ema(
-        real: Annotated[list[float], Field(description="")],
+        real: Annotated[
+            list[float], Field(description="Array of real values for calculation")
+        ],
         timeperiod: Annotated[
             int, Field(description="Number of periods for EMA calculation")
         ] = 30,
@@ -251,7 +253,9 @@ def register_overlap_studies(mcp):
             float,
             Field(description="Acceleration factor for SAR calculation (step size)"),
         ] = 0,
-        maximum: Annotated[float, Field(description="")] = 0,
+        maximum: Annotated[
+            float, Field(description="Maximum value for the acceleration factor")
+        ] = 0,
     ):
         high_nparray = np.array(high, dtype=np.float64)
         low_nparray = np.array(low, dtype=np.float64)
@@ -268,14 +272,28 @@ def register_overlap_studies(mcp):
     def calculate_sarext(
         high: Annotated[list[float], Field(description="Array of high prices")],
         low: Annotated[list[float], Field(description="Array of low prices")],
-        startvalue: Annotated[float, Field(description="")] = 0,
-        offsetonreverse: Annotated[float, Field(description="")] = 0,
-        accelerationinitlong: Annotated[float, Field(description="")] = 0,
-        accelerationlong: Annotated[float, Field(description="")] = 0,
-        accelerationmaxlong: Annotated[float, Field(description="")] = 0,
-        accelerationinitshort: Annotated[float, Field(description="")] = 0,
-        accelerationshort: Annotated[float, Field(description="")] = 0,
-        accelerationmaxshort: Annotated[float, Field(description="")] = 0,
+        startvalue: Annotated[float, Field(description="Start value for SAR")] = 0,
+        offsetonreverse: Annotated[
+            float, Field(description="Offset to apply on reversal")
+        ] = 0,
+        accelerationinitlong: Annotated[
+            float, Field(description="Initial acceleration factor for long positions")
+        ] = 0,
+        accelerationlong: Annotated[
+            float, Field(description="Acceleration factor for long positions")
+        ] = 0,
+        accelerationmaxlong: Annotated[
+            float, Field(description="Maximum acceleration factor for long positions")
+        ] = 0,
+        accelerationinitshort: Annotated[
+            float, Field(description="Initial acceleration factor for short positions")
+        ] = 0,
+        accelerationshort: Annotated[
+            float, Field(description="Acceleration factor for short positions")
+        ] = 0,
+        accelerationmaxshort: Annotated[
+            float, Field(description="Maximum acceleration factor for short positions")
+        ] = 0,
     ):
         high_nparray = np.array(high, dtype=np.float64)
         low_nparray = np.array(low, dtype=np.float64)
