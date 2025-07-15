@@ -1,4 +1,3 @@
-import numpy as np
 from src.ta_lib_mcp_server.tools.volume_indicators import (
     calculate_ad,
     calculate_adosc,
